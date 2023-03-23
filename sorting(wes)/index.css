@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("./20220208_124314.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  filter: 1;
+  /* padding-top: auto; */
+  padding-bottom: 100px;
+
+  /* column-gap: 20px; */
+}
+
+#bands,
+.myInput,
+.userContent {
+  width: 500px;
+}
+#bands {
+  list-style: inside square;
+  background: white;
+  font-size: 20px;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  border-radius: 2px solid black;
+  margin-bottom: 50px;
+}
+.myInput {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+#bands li {
+  border-bottom: 1px solid #efefef;
+  padding: 20px;
+}
+
+#bands li:last-child {
+  border-bottom: 0;
+}
+
+a {
+  color: #ffc600;
+  text-decoration: none;
+}
+.myInput {
+  margin: 30px auto;
+}
+input {
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  color: black;
+  border: 1px solid #efefef;
+}
+.userContent {
+  /* height: 60%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+.userContent button {
+  width: 120px;
+  height: 35px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 17px;
+}
+.userContent div {
+  width: 90%;
+  height: 50px;
+  background-color: #efefef;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.hidden {
+  display: none;
+}

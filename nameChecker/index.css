@@ -64,6 +64,9 @@ input:focus {
 #submit:hover {
   color: #cea135;
 }
+.hidden {
+  display: none;
+}
 @media (max-width: 768px) {
   .user,
   .sentence {

@@ -1,12 +1,77 @@
 let container = document.querySelector(".content");
 const userContainer = container.querySelector(".user");
 const sentenceContainer = container.querySelector(".sentence");
+const sentenceinput = sentenceContainer.querySelector(".input");
 const allinputs = container.querySelectorAll("input");
 const userName = userContainer.querySelector("input");
 const submitAndCheck = document.querySelector("#submit");
-let yourName, usernameValue, userSenValue, myname, myBoolean;
+let yourName, usernameValue, userSenValue, myname, mySen, myBoolean;
 
 //functions
+
+sentenceContainer.classList.add("hidden");
+/*
+const copyingFunction = function (a, b, c, d, e) {
+  if (a.value === "") return;
+  b = a.value;
+  c = packNameAndSenetence(b);
+  console.log(b, c);
+  e.classList.remove("hidden");
+  d.classList.add("hidden");
+};
+
+const user = function (e) {
+  e.preventDefault();
+  copyingFunction(
+    userName,
+    usernameValue,
+    myname,
+    userContainer,
+    sentenceContainer
+  );
+  return myname;
+};
+submitAndCheck.addEventListener("click", user);
+
+console.log(user());
+
+// if (sentenceinput.value === "") return;
+const sen = function (e) {
+  e.preventDefault();
+  console.log(myname);
+  copyingFunction(
+    sentenceinput,
+    userSenValue,
+    mySen,
+    sentenceContainer,
+    userContainer
+  );
+
+  console.log(myname, mySen);
+};
+// sen();
+
+if (user) console.log("hello");
+if (2 > 3) {
+  const sen = function (e) {
+    e.preventDefault();
+    console.log(myname);
+    copyingFunction(
+      sentenceinput,
+      userSenValue,
+      mySen,
+      sentenceContainer,
+      userContainer
+    );
+  };
+  // submitAndCheck.addEventListener("click", sen);
+}
+
+// console.log(usernameValue);
+
+const packNameAndSenetence = (value) => value;
+*/
+/*
 const sentenceFunction = function (name) {
   container.innerHTML = "";
   if (2 > 3) {
@@ -52,8 +117,8 @@ const sentenceFunction = function (name) {
   container.insertAdjacentHTML("afterbegin", html);
   // const sentenceContainer = container.querySelector("sentence");
   const userSentence = container.querySelector("input");
-  console.log(userSenValue);
-  console.log(userSenValue.value);
+  // console.log(userSenValue);
+  // console.log(userSenValue.value);
 
   yourName = name;
   myBoolean = true;
@@ -120,3 +185,4 @@ const sentenceChecker = function () {
 //     .innerText(`Hello, ${myname} is The you entered`);
 //   container.append.templateHtml;
 // };
+*/

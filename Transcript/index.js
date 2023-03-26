@@ -16,7 +16,7 @@ voiceRecognition.addEventListener("result", (e) => {
     .join("");
   console.log(transcript);
 
-  const poopScript = transcript.replace(/shit|fuck|motherfuck|sex|/gi, "**");
+  const poopScript = transcript.replace(/shit|fuck|motherfuck|sex/gi, "💩");
   p.textContent = poopScript;
 
   if (transcript.includes("Allah")) {
@@ -25,7 +25,7 @@ voiceRecognition.addEventListener("result", (e) => {
   }
 
   if (e.results[0].isFinal) {
-    p = document.querySelector("p");
+    p = document.createElement("p");
     words.appendChild(p);
   }
 });

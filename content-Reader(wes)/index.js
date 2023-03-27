@@ -10,6 +10,8 @@ console.log(options);
 
 const generateVoices = function () {
   voices = this.getVoices();
+  console.log(voices);
+
   voicesDropdown.innerHTML = voices
     // .filter((voice) => voice.lang.includes("en"))
     .filter((voice) => voice.lang === "en-US")

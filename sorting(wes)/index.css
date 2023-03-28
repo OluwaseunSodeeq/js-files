@@ -51,7 +51,7 @@ a {
 .myInput {
   margin: 30px auto;
 }
-input {
+.myInput input {
   width: 200px;
   height: 40px;
   font-size: 18px;
@@ -65,6 +65,14 @@ input {
   justify-content: center;
   flex-direction: column;
   margin: auto;
+}
+.userContent input {
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-top: 5px;
 }
 .userContent button {
   width: 120px;

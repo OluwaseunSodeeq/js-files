@@ -13,33 +13,48 @@
 //   "Anywhere But Here",
 //   "An Old Dog",
 // ];
+
 const contentArea = document.querySelector(".userContent");
 const addBtn = contentArea.querySelector("button");
 const allInputedSEn = contentArea.querySelectorAll("div");
 const withArticle = document.querySelector(".with");
 const withOutArticle = document.querySelector(".withOut");
 // console.log(contentArea, allInputedSEn, addBtn);
-let myArray = [];
+let myArray;
 
-const addInput = function () {
+const addInput = function (e) {
+  e.preventDefault();
+  const allInputs = contentArea.querySelectorAll("input");
+  const all = Array.from(allInputs);
+  const check = (any) => any.value === "";
+  if (all.some(check)) return;
+  myArray = [];
+  allInputs.forEach((each) => {
+    myArray.push(each.value);
+  });
+  console.log(myArray, "hello");
+
+  if (all.length >= 3) return;
   const html = `
-  <p id="" value="" class="last"></p>
-   
-    `;
+  <input type="text" data-num="i" name="" id="" />
+ `;
   this.insertAdjacentHTML("beforebegin", html);
 };
-const checking = function () {
-  console.log("hello");
+addBtn.addEventListener("click", addInput);
 
-  if (allInputedSEn.length <= 1) return;
-  allInputedSEn.forEach((each) => {
-    myArray.push(each.value);
-    contentArea.classList.add("hidden");
-  });
-  console.log(myArray);
-};
-withOutArticle.addEventListener("click", checking);
-const sortWith = function () {
+// const checking = function () {
+//   console.log("hello");
+
+//   if (allInputedSEn.length <= 1) return;
+//   allInputedSEn.forEach((each) => {
+//     myArray.push(each.value);
+//     contentArea.classList.add("hidden");
+//   });
+//   console.log(myArray);
+// };
+
+// withOutArticle.addEventListener("click", checking);
+const sortWith = function (myArray) {
   const replaceTheFisrstArticle = function (clauses) {
     return clauses.replace(/^(a |an |the )/i, "").trim();
   };
@@ -57,5 +72,8 @@ const sortWith = function () {
     })
     .join("");
 };
-addBtn.addEventListener("click", addInput);
-withArticle.addEventListener("click", sortWith);
+// sortWith(bands);
+// addBtn.addEventListener("click", addInput);
+withArticle.addEventListener("click", () => {
+  contentArea.innerHTML = sortWith(myArray);
+});

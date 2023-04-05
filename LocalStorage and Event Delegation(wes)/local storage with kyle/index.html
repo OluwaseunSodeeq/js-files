@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Advanced Todo List</title>
+    <style>
+      #new-todo-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #new-todo-form > * {
+        margin: 0.15rem;
+      }
+
+      #list {
+        padding: 0;
+      }
+
+      .list-item {
+        list-style: none;
+      }
+
+      .list-item-label:hover,
+      [data-list-item-checkbox]:hover {
+        cursor: pointer;
+      }
+
+      .list-item-label:hover > [data-list-item-text] {
+        color: #333;
+        text-decoration: line-through;
+      }
+
+      [data-list-item-checkbox]:checked ~ [data-list-item-text] {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+
+      [data-button-delete] {
+        margin-left: 0.5rem;
+      }
+
+      button {
+        cursor: pointer;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <script defer src="indexK.js"></script>
+  </head>
+  <body>
+    <ul id="list"></ul>
+
+    <form id="new-todo-form">
+      <label for="todo-input">New Todo</label>
+      <input type="text" id="todo-input" />
+      <button type="submit">Add Todo</button>
+    </form>
+
+    <template id="list-item-template">
+      <!-- <li class="list-item">
+        <label class="list-item-label">
+          <input type="checkbox" data-list-item-checkbox />
+          <span data-list-item-text></span>
+        </label>
+        <button data-button-delete>Delete</button>
+      </li>  -->
+    </template>
+  </body>
+</html>

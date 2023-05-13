@@ -226,16 +226,7 @@ if (1 > 2) {
     babiesDiv.classList.add("babiesStyle");
     babiesDiv.append(babiesText);
     // (babiesText.style.cssText = " width: 90vw"),
-    //   "height: 50vh",
-    //   " position: relative",
-    //   "margin: 0 auto",
-    //   "background-color: #d0cebf",
-    //   "color: red",
-    //   "font-size: 35px",
-    //   "font-weight: 500",
-    //   "text-align: center",
-    //   "padding-top: 20%",
-    //   "padding-bottom: 25%";
+
     babiesParentElement.append(babiesDiv);
     babiesDiv.style.display = y;
   };
@@ -275,12 +266,6 @@ if (1 > 2) {
           if (item.innerText === "Babies") {
             console.log(item);
             item.parentNode.parentNode.parentNode.style.display = "block";
-            // document.addEventListener("click", () => {
-            //   babiesParentElement.removeChild(babiesDiv);
-            //   babiesText.textContent = "item not found!";
-            //   babiesDiv.classList.remove("babiesStyle");
-            // });
-            //
           } else {
             item.parentNode.parentNode.parentNode.style.display = "none";
           }

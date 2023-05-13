@@ -192,7 +192,7 @@ if (2 > 3) {
 
     filterBtns.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
-        // console.log(e.currentTarget.dataset);
+        console.log(e.currentTarget.dataset);
         const category = e.currentTarget.dataset.id;
         const menuCategory = menu.filter(function (menuItem) {
           // console.log(menuItem.category);
@@ -209,6 +209,7 @@ if (2 > 3) {
     });
   }
 }
+
 ///INSTICNT HUB APPROACH
 if (1 > 2) {
   ///INSTICNT HUB APPROACH

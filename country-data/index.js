@@ -5,9 +5,9 @@ const country = document.querySelector(".countries");
 const form = container.querySelector("form");
 const inputedValue = document.querySelector("form input");
 
-const renderData = function (inputedCountryData) {
+const renderData = function (inputedCountryData, className = "") {
   const html = `
-  <article class="country">
+  <article class="country ${className}">
         <img class="country__img" src="${inputedCountryData.flags.svg}" />
         <div class="country__data">
             <h3 class="country__name">${inputedCountryData.name.common}</h3>
@@ -31,28 +31,46 @@ const renderData = function (inputedCountryData) {
 
     `;
   country.insertAdjacentHTML("beforeend", html);
-  country.style.opacity = 1;
+};
+const renderError = function (msg) {
+  country.innerHTML = "";
+
+  country.insertAdjacentText("beforeend", msg);
 };
 const promiseFunction = function (inputedCountry) {
   //first Country
   country.innerHTML = "";
   fetch(`https://restcountries.com/v3.1/name/${inputedCountry}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`Country not found (${response.status})`);
+
+      return response.json();
+    })
     .then((data) => {
       renderData(data[0]);
       const neigbour = data[0].borders[0];
-      if (!neigbour) return;
-      //   console.log(neigbour);
+      //   const neigbour = "sdfghh";
+      if (!neigbour) return renderError(`This country has no border!`);
 
-      //   Second country /////
-      fetch(`https://restcountries.com/v3.1/alpha/${neigbour}`)
-        .then((res) => res.json())
-        .then((data) => {
-          renderData(data[0]);
-        });
+      //   Second country  Or neigbour name below/////
+      return fetch(`https://restcountries.com/v3.1/alpha/${neigbour}`);
+    })
+    .then((res) => {
+      if (!res.ok) throw new Error(`Country not found (${res.status})`);
+      return res.json();
+    })
+    .then((data) => {
+      renderData(data[0], "neighbour");
+    })
+    .catch((err) => {
+      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+    })
+    .finally(() => {
+      country.style.opacity = 1;
     });
 };
-// promiseFunction("mexico");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (inputedValue.value === "") return;
